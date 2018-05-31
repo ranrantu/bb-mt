@@ -1,0 +1,61 @@
+{
+  "name": "bb-mt",
+  "version": "1.0.0",
+  "description": "The web's scaffolding tool for B2B webapps",
+  "main": "index.js",
+  "bin": {
+    "bb": "./bin/bb-mt.js"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranrantu/bb-mt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranrantu/bb-mt/issues"
+  },
+  "homepage": "https://github.com/ranrantu/bb-mt#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "chalk": "^2.3.2",
+    "cli-list": "^0.2.0",
+    "cli-spinner": "^0.2.8",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "command-exists": "^1.2.6",
+    "commander": "^2.15.1",
+    "cross-spawn": "^6.0.5",
+    "fs-copy-file": "^2.1.2",
+    "fs-extra": "^6.0.1",
+    "fs-promise": "^2.0.3",
+    "fs-readfile-promise": "^3.0.1",
+    "fullname": "^3.3.0",
+    "graceful-process": "^1.2.0",
+    "inquirer": "^5.2.0",
+    "mem-fs": "^1.1.3",
+    "meow": "^5.0.0",
+    "path": "^0.12.7",
+    "shelljs": "^0.8.2",
+    "simple-git": "^1.95.0",
+    "vinyl": "^2.1.0",
+    "yargs": "^11.0.0",
+    "yargs-parser": "^10.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
+  }
+}
