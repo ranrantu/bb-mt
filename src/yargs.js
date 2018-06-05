@@ -18,13 +18,16 @@ const inquirer = require('./inquirer');
           console.log('you should assign a specific module name');
         }
       });
-      yargs.command('component', 'add component', async yargs => {
+      yargs.command('component', 'add components', async yargs => {
         if (yargs.argv._[2]) {
           await gen.addComponent(yargs.argv._[2]);
         } else {
           console.log('you should assign a specific components name');
         }
-      })
+      });
+      yargs.command('*', '', (yargs) => {
+        inquirer();
+      });
     })
     .command('*', '', (yargs) => {
       inquirer();
