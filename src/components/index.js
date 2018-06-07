@@ -4,4 +4,4 @@
 
 import './XgImg';
 
-export { default as Abc } from './Abc/Abc';
+export { default as aaa } from './aaa/aaa';

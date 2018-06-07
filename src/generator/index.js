@@ -9,6 +9,7 @@ const simpleGit = require('simple-git')();
 const shell = require('shelljs');
 const inquirer = require('inquirer');
 const cliSpinners = require('cli-spinners');
+const babel = require('babel-core');
 
 const TEMPLATES_PATH = path.resolve(__dirname, '../templates/');
 const DESTINATION_PATH = process.cwd();
@@ -99,6 +100,12 @@ class Generator {
     console.log('Success! a module named ' + name + ' created!');
   }
 
+  async removeModule(name) {
+    const dir = DESTINATION_PATH + '/src/modules/' + name;
+    shell.exec('rm -rf ' + dir);
+    console.log('Success! a module named ' + name + ' removed!');
+  }
+
   async addComponent(name) {
     const info = {
       componentName: name,
@@ -120,7 +127,7 @@ class Generator {
       TEMPLATES_PATH + '/components/initial.vue',
       dir + name + '.vue',
       {
-        match: /\{[^\}]+\}/g,
+        match: /\~[^\~]+\~/g,
         callback: function (keyword) {
           return info[keyword.slice(1, -1)];
         }
@@ -137,7 +144,7 @@ class Generator {
           callback: function (keyword) {
             return info[keyword.slice(1, -1)];
           }
-        },{
+        }, {
           match: /componentName/g,
           callback: name
         }]
@@ -151,8 +158,13 @@ class Generator {
       );
     }
 
-
     console.log('Success! a component named ' + name + ' created!');
+  }
+
+  async removeComponent(name) {
+    const dir = DESTINATION_PATH + '/src/components/' + name;
+    shell.exec('rm -rf ' + dir);
+    console.log('Success! a component named ' + name + ' removed!');
   }
 
   async echo2File(string, dir, check) {

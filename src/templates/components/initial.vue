@@ -1,7 +1,7 @@
 <!--
-  {componentName}组件
-  {email}
-  {datetime}
+  ~componentName~组件
+  ~email~
+  ~datetime~
 
   Usage
 
@@ -11,6 +11,9 @@
 -->
 <template>
 </template>
-<style></style>
+<style src="./~componentName~.less" lang="less"></style>
 <script>
+  export default {
+
+  }
 </script>

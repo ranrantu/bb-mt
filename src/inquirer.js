@@ -17,7 +17,20 @@ module.exports = async function inquire() {
             name: 'componentName',
             message: 'input a component name'
           }]).then(answers => {
-            shell.exec('bb add component ' + answers.componentName);
+            shell.exec(process.env._ + ' add component ' + answers.componentName);
+          })
+      }
+    },
+    {
+      cli: 'remove component',
+      callback: async function () {
+        await inquirer
+          .prompt([{
+            type: 'input',
+            name: 'componentName',
+            message: 'input a component name'
+          }]).then(answers => {
+            shell.exec(process.env._ + ' remove component ' + answers.componentName);
           })
       }
     },
@@ -30,7 +43,20 @@ module.exports = async function inquire() {
             name: 'moduleName',
             message: 'input a component name'
           }]).then(answers => {
-            shell.exec('bb add module ' + answers.moduleName);
+            shell.exec(process.env._ + ' add module ' + answers.moduleName);
+          })
+      }
+    },
+    {
+      cli: 'remove module',
+      callback: async function () {
+        await inquirer
+          .prompt([{
+            type: 'input',
+            name: 'moduleName',
+            message: 'input a component name'
+          }]).then(answers => {
+            shell.exec(process.env._ + ' remove module ' + answers.moduleName);
           })
       }
     },
