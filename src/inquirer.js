@@ -2,6 +2,8 @@ const inquirer = require('inquirer');
 const fullname = require('fullname');
 const gen = require('./generator');
 const shell = require('shelljs');
+const path = require('path');
+const NODE_PATH = path.resolve(__dirname,'../node_modules/');
 
 module.exports = async function inquire() {
   const username = await
@@ -62,7 +64,10 @@ module.exports = async function inquire() {
     },
     - 1,
     {
-      cli:'init project'
+      cli:'init project',
+      callback: async function (){
+        shell.exec(NODE_PATH + '/webpack/bin/webpack.js --mode production');
+      }
     },
     {
       cli:'build project'
